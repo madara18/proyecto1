@@ -1,0 +1,60 @@
+insert.php
+<?
+require("controler/conex.php");
+?>
+<html>
+<head>
+<title> insertar registros </title>
+<body>
+if(isset($_request["r"])){
+<?php
+if(isset($_request ["r"])){
+$nom =$_request["n"]; 
+$td  = $_request["td"];
+$num = $_request["num"];
+$dir= $_request ["dir"];
+$tel= $_request ["tel"];
+$fax= $_request ["fax"];
+$mov= $_request ["mov"];
+$mail= $_request ["mail"];
+$con= $_request ["con"];
+$sql="INSERT INTO clientes set (IDE, Nombre, Tipoid, NumDoc, Direc, Tel, Fax, Mov, Mail, Contacto) 
+   values (" ",$nom, $td, $num, $dir, $tel, $fax, $mov, $mail, $con)"; 
+   mysql_query ($sql,$conexion) ordie ("Error sql");   ?>
+<SCRIPT>
+   Alert ("El Registro Se ha Guardado Satisfactoriamente");
+   Location.href="insert.php";
+   </SCRIPT>
+
+
+
+
+
+	
+} else {?>
+<h1> vamos a registrar el cliente </h1>
+<form action = "insert.php" method= "get"
+nombre: <input type= "text" name= "n" /> </br>
+tipo documento: <select name= "td" >
+<option>cc </option>
+<option>nit</option>
+<option>ti </option>
+<option> sisben </option>
+</selecct> <br>
+numero de documento: <input type= "text" name= "num" /> </br>
+direccion: <input type= "text" name= "dir" /> </br>
+telefono: <input type= "text" name= "tel" /> </br>
+fax: <input type= "text" name= "fax" /> </br>
+movil: <input type= "text" name= "mov" /> </br>
+mail: <input type= "text" name= "mail" /> </br>
+contacto: <input type= "text" name= "con" /> </br>
+
+<input type= "submit" name ="r" value = "registrar cliente"/>
+<input type= "reset" name = "c" value= "limpiar registro"/>
+</from>
+<?php
+
+}
+?>
+</body>
+</html> 
