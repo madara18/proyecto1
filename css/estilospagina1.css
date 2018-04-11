@@ -22,14 +22,15 @@ margin: 0px;
 
 	background-color: #585858;
 	color: white;
-    padding: 5px;
+  padding: 5px;
 	margin-left: 10px;
 	font-size: 17px;
 	font-family:Broadway;
 	text-align: right;
 }
+
 h1{
-	text-align: left;
+	text-align: center;
 }
 
 .navegacion:hover{
